@@ -1,0 +1,27 @@
+.btn-scroll_back {
+    position: fixed;
+    right: calculateRem(20px);
+    bottom: calculateRem(60px);
+    background: $c-text;
+    width: calculateRem(50px);
+    height: calculateRem(50px);
+    color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    transition: all .25s ease-in-out;
+    &.show {
+        opacity: 1;
+    }
+    &:hover {
+        opacity: .8;
+    }
+    .back_title {
+        @include hide-visually;
+    }
+    @media #{$tablet-landscape} { // >= 992px
+        right: calculateRem(80px);
+        bottom: calculateRem(80px);
+    }
+}
+

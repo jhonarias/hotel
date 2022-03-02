@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Clearface;
+    font-weight: 400;
+    src: url(#{$path-typography}/clearface/crearface.woff2) format("woff2"), url(#{$path-typography}/clearface/clearface.woff) format("woff")
+}
+
+@font-face {
+    font-family: Avenir;
+    font-weight: 400;
+    src: url(#{$path-typography}/avenir/avenir.woff2) format("woff2"), url(#{$path-typography}/avenir/avenir.woff) format("woff")
+}
+
+@font-face {
+    font-family: Avenir;
+    font-weight: 900;
+    src: url(#{$path-typography}/avenir/avenir900.woff2) format("woff2"), url(#{$path-typography}/avenir/avenir900.woff) format("woff")
+}
+
+@font-face {
+    font-family: "Silk Serif";
+    font-weight: 500;
+    src: url(#{$path-typography}/silk-serif/silk-serif-italic.woff2) format("woff2"), url(#{$path-typography}/silk-serif/silk_serif_italic.woff) format("woff")
+}
+
+@font-face {
+    font-family: Stay Classy;
+    font-weight: 400;
+    src: url(#{$path-typography}/stay-classy/nicky_laatz_stay_classy.woff2) format("woff2"), url(#{$path-typography}/stay-classy/nicky_laatz_stay_classy.woff) format("woff")
+}
+
+@font-face {
+    font-family: California Dreamer Sans;
+    font-weight: 400;
+    src: url(#{$path-typography}/california-dreamer-sans/california_dreamer_sans.woff2) format("woff2"), url(#{$path-typography}/california-dreamer-sans/california_dreamer_sans.woff) format("woff")
+}

@@ -1,0 +1,106 @@
+// ****************************************
+//  IBE COMPONENT
+//
+// ****************************************
+//  BOOKING STEPS
+// ****************************************
+//
+// ****************************************
+
+.booking-steps_wrap {
+    padding: calculateRem(8px) 0;
+}
+.booking-steps_title {
+    .title_label {
+        @include font-size($f-size-lg);
+        font-family: $font-name;
+    }
+}
+.booking-steps {
+    display: flex;
+    counter-reset: booking_steps_counter;
+    li {
+        position: relative;
+        flex-basis: calc(100% / 6);
+        padding: calculateRem(6px) calculateRem(10px) calculateRem(6px) 0;
+        overflow: hidden;
+        @include font-size(12px);
+        box-sizing: border-box;
+        &.active {
+            font-weight: 600;
+            .booking-steps_label {
+                display: block;
+            }
+            .number {
+                background: $c-primary;
+                border: 0;
+                color: #fff;
+            }
+        }
+        &.done {
+            .number {
+                background: $c-text;
+                border: 0;
+                color: #fff;
+                @include font-icon($icon-check, before, $f-size-md-xxl);
+            }
+        }
+        &::after { //## line
+           content: '';
+           position: absolute;
+           top: calculateRem(20px);
+           left: 0;
+           width: 100%;
+           height: calculateRem(3px);
+           z-index: 1;
+           background: $c-color2;
+        }
+        &:last-child::after { display: none; }
+    }
+    .booking-steps_label {
+        display: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calculateRem(30px);
+        height: calculateRem(30px);
+        color: $c-color4;
+        margin-bottom: calculateRem(5px);
+        @include font-size($f-size);
+        font-weight: 600;
+        position: relative;
+        box-sizing: border-box;
+        border-radius: 50%;
+        border: 1px solid $c-color2;
+        z-index: 2;
+        background: #fff;
+        &::before {
+            content: counter(booking_steps_counter);
+            counter-increment: booking_steps_counter;
+        }
+    }
+}
+.booking-steps_text {
+    @include hide-visually;
+}
+
+// [Responsive]
+@media #{$tablet-portrait} { // >= 768px
+	.booking-steps_wrap {
+		padding: calculateRem(20px) 0;
+	}
+}
+@media #{$tablet-landscape} { // >=992px
+    .booking-steps {
+        .booking-steps_label {
+            display: block;
+        }
+    }
+    .search-fixed .booking-steps_wrap {
+        border: 0;
+    }
+}

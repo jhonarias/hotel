@@ -1,0 +1,94 @@
+$card-padding: 15px;
+@mixin card-style1 {
+    padding: calculateRem($card-padding);
+    background: $c-color3;
+    .card_inner {
+        padding: calculateRem(30px) calculateRem($card-padding);
+        background: #fff;
+    }
+    .card_image {
+        padding: 0 calculateRem(20px) calculateRem(30px);
+    }
+}
+@mixin card-style2 {
+    .card_image {
+        background: $c-color3;
+        margin-bottom: calculateRem(10px);
+        padding: calculateRem(15px);
+        img {
+            background: #fff;
+            padding: calculateRem(15px);
+        }
+    }
+}
+@mixin card-style3 {
+    .card_image {
+        img {
+            height: auto;
+        }
+    }
+}
+.card {
+    height: 100%;   
+    box-sizing: border-box;
+    position: relative;
+    &.card--style1 {
+        @include card-style1; 
+    }
+    &.card--style2 {
+        @include card-style2;
+    }
+    &.card--style3 {
+        @include card-style1;
+        @include card-style3;
+    }
+}
+.card_inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;    
+    box-sizing: border-box;
+    text-align: center;
+}
+.card-title {
+    @include font-size($f-size-md);
+}
+.card_image {
+    height: 100%;
+    img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+        box-sizing: border-box;
+    }
+}
+.card_rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: calculateRem(10px);
+}
+.card_rating-icons {
+    margin-right: calculateRem(15px);
+}
+.card_rating-label {
+    @include font-size(30px);
+    font-family: $font-name-clearface;
+}
+.card_description {
+    @include font-size($f-size-sm);
+    margin-top: auto;
+    p {
+        margin: 0;
+    }
+}
+.card-action {
+    margin-top: 15px;
+}
+.card-action_button {
+    @include font-size($f-size-sm);
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $c-text;
+}

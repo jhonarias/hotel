@@ -1,0 +1,51 @@
+.banner {
+	text-align: center;
+	color: #fff;
+}
+.banner_inner {
+    position: relative;
+}
+.banner_img {
+	img {
+		max-width: 100%;
+		object-fit: cover;
+	}
+}
+.banner_container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.banner_caption-subtitle,
+.banner_caption-img {
+    margin-bottom: calculateRem(12px);
+}
+.banner_caption-subtitle {
+    @include font-size($f-size-md);
+    font-family: $font-name-clearface;
+}
+.banner_caption-img {
+	img {
+		max-width: 100%;
+		object-fit: contain;
+	}
+}
+.banner_caption-copy,
+.banner_action-link {
+    @include font-size($f-size-sm);
+}
+.banner_caption-copy {
+	p {
+		margin-bottom: calculateRem(10px);
+	}
+}
+.banner_action {
+    margin-top: calculateRem(10px);
+}
+.banner_action-link {
+    border-bottom: 1px solid #fff;
+    padding-bottom: calculateRem(3px);
+	font-weight: 600;
+	color: #fff;
+}

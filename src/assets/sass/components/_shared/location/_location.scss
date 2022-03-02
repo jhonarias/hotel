@@ -1,0 +1,52 @@
+$location-map-margin: calculateRem(30px);
+
+.location-map_inner {
+    position: relative;
+}
+
+.location-map_container {
+    height: calculateRem(360px);
+}
+
+.location-map_caption {
+    margin-top: calculateRem(10px);
+    padding: calculateRem(30px) calculateRem(20px);
+    background: #fff;
+    box-sizing: border-box;
+    border: 1px solid $c-border;
+}
+
+.location-map_caption-description {
+    p {
+        margin-bottom: 0;
+    }
+
+    hr {
+        margin: $location-map-margin 0;
+        border-color: $c-border;
+        border-style: solid;
+    }
+}
+
+.location-map_caption_content {
+    margin-top: $location-map-margin;
+}
+
+@media #{$tablet-landscape} { // >= 992px
+    .location-map_container {
+        height: calculateRem(600px);
+    }
+    
+    .location-map_caption {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) translateX(25%);
+        min-height: 60%;
+        padding: calculateRem(45px) calculateRem(35px);
+        box-shadow: 0 0 4px rgba(#000, .25);
+        overflow-y: auto;
+        border: 0;
+        margin-top: 0;
+    }
+}

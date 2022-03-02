@@ -1,0 +1,174 @@
+$card-booking-padding: 15px;
+.card-booking {
+    padding: calculateRem($card-booking-padding);
+    margin-top: calculateRem($card-booking-padding);
+    background: $c-color3;
+    border: 1px solid $c-color3;
+    box-sizing: border-box;
+}
+.card-booking_image  {
+    margin-bottom: calculateRem($card-booking-padding);
+    .fotorama__wrap,
+    .fotorama__stage {
+        width: 100% !important;
+    } 
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.card-booking_items {
+    display: none;
+}
+.card-booking_items li,
+.card-booking_services-list li {
+    padding: 0 0 calculateRem(8px) calculateRem(25px);
+    box-sizing: border-box;
+    position: relative;
+    .fas {
+        position: absolute;
+        left: 0;
+        top: calculateRem(2px);
+    }
+}
+.card-booking_title-label {
+    @include font-size(22px);
+    font-family: $font-name;
+}
+.card-booking_features {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: calculateRem(12px);
+    @include font-size($f-size-sm);
+}
+$card-booking-feature-space: calculateRem(15px);
+.card-booking_feature {
+    margin-right: $card-booking-feature-space;
+    padding-right: $card-booking-feature-space;
+    position: relative;
+    box-sizing: border-box;
+    &.card-booking_feature--main {
+        color: $c-color5;
+        padding-right: 0;
+        &::after {
+            content: '';
+        }
+    }
+    &::after {
+        position: absolute;
+        top: 0;
+        right: calculateRem(-2px);
+        content: '|';
+    }
+    &:last-child::after {
+        content: '';
+    }
+}
+.card-booking_description p {
+    margin-bottom: calculateRem(12px);
+}
+.card-booking_details {
+    margin-bottom: calculateRem(13px);
+    padding-bottom: calculateRem(15px);
+    border-bottom: 1px solid $c-color2;
+}
+.card-booking_details-button,
+.card-booking_services-title_label {
+    border-bottom: 1px solid;
+    color: $c-text;
+    &:hover {
+        border-bottom-width: 2px;
+    }
+}
+.card-booking_services-item {
+    border-bottom: 1px solid $c-color2;
+    margin-bottom: calculateRem(13px);
+    &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        .card-booking_services-description p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.card-booking_services-title,
+.card-booking_services-description p,
+.card-booking_services-group  {
+    margin-bottom: calculateRem(13px);
+}
+
+.card-booking_services-price_label {
+    margin-bottom: calculateRem(5px);
+    @include font-size($f-size-md-xl);
+    font-weight: 600;
+    display: block;
+}
+.card-booking_services-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-booking_services-perningh_label,
+.card-booking_services-fees_label,
+.card-booking_services-action_button {
+    @include font-size($f-size-xs);
+}
+.card-booking_services-perningh_label,
+.card-booking_services-fees_label {
+    display: block;
+    line-height: 1.1;
+}
+.card-booking_services-perningh_label {
+    color: #000;
+}
+.card-booking_services-fees_label {
+    color: $c-color4;
+}
+.card-booking_services-action_button {
+    @include btn-primary;
+    margin: 0 auto;
+}
+@media #{$tablet-portrait} { // >=768px
+    .card-booking_inner {
+        display: flex;
+    }
+    .card-booking_items {
+        display: block;
+    }
+    .card-booking_column-left {
+        flex-basis: calc(40% - #{$card-booking-padding});
+        padding-right: calculateRem($card-booking-padding);
+        box-sizing: border-box;
+    }
+    .card-booking_column-right {
+        flex-basis: 60%;
+    }
+}
+@media #{$desktop} { // >= 1200px
+    .card-booking_services-group {
+        display: block;
+    }
+    .card-booking_services-fees {
+        margin-bottom: calculateRem(13px);
+    }
+    .card-booking_services-item {
+        display: flex;
+    }
+    .card-booking_services-item_left {
+        padding-right: calculateRem(12px);
+        box-sizing: border-box;
+    }
+    .card-booking_column-left {
+        flex-basis: 30%;
+    }
+    .card-booking_column-right {
+        flex-basis: 70%;
+    }
+    .card-booking_services-item_right {
+        text-align: right;
+    }
+    .card-booking_services-action_button {
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,242 @@
+@import 'import';
+
+// ****************************************
+//  POBEDA STYLES
+//
+// ****************************************
+//
+// ****************************************
+
+html,body {
+	height: 100%;
+}
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+body {
+	@include font-size($f-size);
+	font-family: $f-body;
+	color: $c-text;
+	line-height: 1.4;
+	padding: 0;
+	margin: 0;
+	min-width: 320px;
+	letter-spacing: .05em;
+	background-color: $body-background;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+a,
+input,
+textarea,
+button,
+select,
+.button,
+[role='button'] {
+	&:focus { //## should be for accessibility
+		// outline: 0;
+		@include accessibility-outline;
+	}
+	&:focus:active {
+		outline: 0;
+	}
+}
+[tabindex='-1']:focus {
+	outline: 0;
+}
+button {
+	color: inherit; // reduce css file size
+}
+// headings
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-name-clearface;
+    margin-top: 0;
+    margin-bottom: calculateRem(20px);
+}
+h1, h2 {
+	@include font-size(30px);
+}
+.ui-headline--h3 {
+    @include font-size($f-size-md);
+}
+.ui-headline--h4 {
+    @include font-size($f-size-sm);
+}
+.ui-headline--handwriting {
+	@include font-size($f-size-xlgx);
+	font-family: $font-name-stay-classy;
+	color: $c-primary;
+	@media #{$mobile} { // >= 640px
+		@include font-size($f-size-super);
+	}
+}
+a {
+	text-decoration: none;
+	color: $c-link;
+	cursor: pointer;
+	&:hover {
+		//color: $c-link-hover;
+		opacity: .7;
+	}
+	&:active {
+		text-decoration: inherit;
+	}
+}
+[role='button'] {
+	cursor: pointer;
+}
+::selection {
+	color: #fff;
+	background-color: $c-primary;
+}
+
+strong {
+	font-weight: 600;
+}
+
+p {
+	//margin-top: calculateRem(8px);
+	margin-bottom: calculateRem(30px);
+}
+em {
+	font-style: italic;
+}
+sup, sub {
+	font-size: .75em;
+	a {
+		color: inherit;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+sup {
+	vertical-align: top;
+	a {
+		vertical-align: top;
+	}
+}
+sub {
+	vertical-align: bottom;
+	a {
+		vertical-align: bottom;
+	}
+}
+fieldset {
+	width: 100%;
+}
+
+input {
+	font-family: $font-name;
+	@include font-size($f-size);
+}
+
+// + Template
+// -------
+.page-wrap {
+	position: relative;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	transition: margin 700ms;
+}
+.content-wrap {
+	position: relative;
+	padding-bottom: 40px;
+}
+
+// read more
+.read-more_triger {
+	color: $c-primary;
+	text-decoration: underline;
+}
+
+.grid-custom-style1 {
+	@media #{$tablet-landscape} { // >= 992px
+		position: relative;
+		margin-top: -($gl-gutter*2);
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 1px solid $c-color1;
+			z-index: -1;
+		}
+		&::before {
+			width: calc(100% - #{$gl-gutter * 2});
+			height: 100%;
+			margin: 0 $gl-gutter;
+		}
+		&::after {			
+			width: calc(100% - #{$gl-gutter * 4});
+			height: calc(100% - #{$gl-gutter * 2});
+			margin: $gl-gutter ($gl-gutter * 2);
+		}
+		& > div:first-child .grid-custom_column {
+			margin: 0 4.16667%;
+    		padding: calculateRem(100px) calculateRem(30px) 0;
+		}
+		& > div:last-child .grid-custom_column {
+			padding: calculateRem(60px) calculateRem(50px) calculateRem(30px) calculateRem(25px);
+			position: relative;
+			height: 100%;
+			box-sizing: border-box;
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				width: 1px;
+				height: 85%;
+				background: $c-color1;
+			}
+		}
+	}
+}
+
+.context-p {
+	@include font-size(45px);
+	font-family: $font-name-stay-classy;
+	margin-bottom: calculateRem(20px);
+	padding: calculateRem(20px) calculateRem(8px) calculateRem(8px);
+    color: $c-primary;
+	@media #{$mobile} { // >= 640px
+		@include font-size($f-size-super);
+	}
+}
+
+.context-list_bullet-point {
+	margin-bottom: calculateRem(60px);
+	padding-left: calculateRem(20px);
+	list-style: square;
+	li {
+		padding: calculateRem(5px) 0;
+	}
+	@media #{$mobile} { // >= 640px
+		column-count: 3;
+	}
+}
+
+.backgroun-image1 {
+	background: url('#{$path-imgs}/layout/bird-wallpaper.jpg');
+}
+
+.content-promotional {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		height: 140px;
+		background-color: $c-color1;
+		margin-top: -$gl-gutter;
+	}
+}

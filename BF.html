@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Experience lively Cali with a stay at the peaceful Movich Casa del Alferez, a colonial-style luxury hotel with candlelit terrace bar and fine dining.">
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/assets/imgs/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/assets/imgs/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/assets/imgs/favicon/favicon-16x16.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./dist/styles.css">
+    <!-- library juqery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- support IE11 tag picture html5 -->
+    <script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js"></script>
+    <!-- library Fotoroma Gallery images --->
+    <!-- Documentation https://fotorama.io/#0627c11f-522d-48b9-9f17-9ea05b769aaa -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // init navigation
+            $('.header-primary_item .navigation_trigger, .header-secundary .navigation_action-close_button').on('click', function () {
+                $('body').toggleClass('header-navigation-open');
+            });
+            $(window).click(function () {
+                $('body').removeClass('header-navigation-open');
+            });
+            $('.header-secundary, .header-primary .navigation_trigger').on('click', function () {
+                event.stopPropagation();
+            });
+            // typology
+            $('#open-typology, .typology_button_action-close').click(function() {
+                $('#open-typology').parent().toggleClass('selected');
+                $('#open-typology').attr('aria-expanded',$('#open-typology').attr('aria-expanded')==='true'?'false':'true');
+                $('body').toggleClass('typology-open');
+                $('.typology_container').toggle();
+            });
+            // promocode
+            $('.promocode_button-trigger').click(function() {
+                $(this).attr('aria-expanded',$(this).attr('aria-expanded')==='true'?'false':'true');
+                $('.promocode_container').attr('aria-hidden',$('.promocode_container').attr('aria-hidden')==='true'?'false':'true');
+                $('.promocode_container').toggle();
+            });
+            // summary
+            $('.summmary_header_inner').click(function() {
+                $(this).attr('aria-expanded',$(this).attr('aria-expanded')==='true'?'false':'true');
+                $('.summary_body').attr('aria-hidden',$('.summary_body').attr('aria-hidden')==='true'?'false':'true');
+                $('body').toggleClass('summary-open');
+            })
+        });
+    </script>
+    <title>Movich Casa del Alférez, Luxury Hotel in Cali, Colombia | Small Luxury Hotels of the World</title>
+</head>
+
+<body class="home-page">
+    <div class="page-wrap">
+        <div class="header_wrap">
+            <header class="header">
+                <div class="header_innner">
+                    <nav class="header-primary">
+                        <ul>
+                            <li class="header-primary_item header-primary_item--navigation"> <!-- Only mobile -->
+                                <div class="navigation">
+                                    <div class="navigation_inner">
+                                        <button class="navigation_trigger">
+                                            <i class="fas fa-bars"></i>
+                                            <span class="trigger_label">Menu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header-primary_item header-primary_item--logo">
+                                <a href="" class="header-primary_item_link">
+                                    <div class="logo">
+                                        <img src="./src/assets/imgs/logo.png" alt="Movich Casa del Alférez">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="header-primary_item">
+                                <span class="item_label">Movich Casa del Alferez</span>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="header-secundary">
+                        <ul>
+                            <li class="header-secundary_item header-secundary_item--navigation"> <!-- Only mobile -->
+                                <div class="header-secundary_item--navigation_inner">
+                                    <div class="navigation_action-close">
+                                        <button class="navigation_action-close_button">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="header-secundary_item--navigation_label">
+                                        <span class="label_text">Movich Casa del Alferez</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header-secundary_item">
+                                <a href="" class="header-secundary_item_link">
+                                    <span class="link_label">Hotel info</span>
+                                </a>
+                            </li>
+                            <li class="header-secundary_item">
+                                <a href="" class="header-secundary_item_link">
+                                    <span class="link_label">Manage My Bookings</span>
+                                </a>
+                            </li>
+                            <li class="header-secundary_item header-secundary_item--currency">
+                                <div class="currency">
+                                    <div class="currency_inner">
+                                        <form action="">
+                                            <div class="currency_select">
+                                                <select name="" id="">
+                                                    <optgroup>
+                                                        <option value="AUD">AUD</option>
+                                                        <option value="CAD" selected="">CAD</option>
+                                                        <option value="CHF">CHF</option>
+                                                        <option value="CNY">CNY</option>
+                                                        <option value="EUR">EUR</option>
+                                                        <option value="GBP">GBP</option>
+                                                        <option value="JPY">JPY</option>
+                                                        <option value="SGD">SGD</option>
+                                                        <option value="USD">USD</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="header-secundary_item header-secundary_item--language">
+                                <div class="language">
+                                    <div class="language_inner">
+                                        <form action="">
+                                            <div class="language_select">
+                                                <select name="" id="">
+                                                    <optgroup>
+                                                        <option value="AUD">China Yuan Renminbi</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <main class="maincontent">
+            <div class="content-wrap">
+                <div class="container-wrap">
+                    <div class="grid">
+                        <div class="grid-col col-12 col-lg-8">
+                            <!-- Search bar -->
+                            <div class="search-bar">
+                                <div class="search-bar_title">
+                                    <h2 class="search-bar_title_text">Search bar</h2>
+                                </div>
+                                <div class="search-bar_inner">
+                                    <div class="search-bar_top">
+                                        <div class="search-bar_item">
+                                            <button class="search-bar_item_button" aria-expanded="false" id="open-typology" aria-controls="typology-adults">
+                                                <i class="search-bar_item_button_icon icon fas fa-user-friends"></i>
+                                                <span class="search-bar_item_button_title">Guests</span>
+                                                <span class="search-bar_item_button_text">2 Adults, 0 Children</span>
+                                            </button>
+                                        </div>
+                                        <div class="search-bar_item">
+                                            <button class="search-bar_item_button" aria-expanded="false">
+                                                <i class="search-bar_item_button_icon icon fas fa-calendar-day"></i>
+                                                <span class="search-bar_item_button_title">Check-in</span>
+                                                <span class="search-bar_item_button_text">Mon, Aug 24, 2020</span>
+                                            </button>
+                                        </div>
+                                        <div class="search-bar_item">
+                                            <button class="search-bar_item_button" aria-expanded="false">
+                                                <i class="search-bar_item_button_icon icon fas fa-calendar-day"></i>
+                                                <span class="search-bar_item_button_title">Check-out</span>
+                                                <span class="search-bar_item_button_text">Tue, Aug 25, 2020</span>
+                                            </button>
+                                            <button class="button btn-primary search-bar_item_button_action">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="search-bar_options">
+                                        <div class="typology_container" style="display: none;" id="typology-adults">
+                                            <div class="typology_head">
+                                                <div class="typology_head_title">
+                                                    <span class="title_label">Select Guests</span>
+                                                </div>
+                                                <button class="typology_button_action-close">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                            <div class="typology_body">
+                                                <div class="typology_item">
+                                                    <span class="pax_label">Adults</span>
+                                                    <div class="pax_select">
+                                                        <div class="ui-num-ud">
+                                                            <button class="ui-num-ud_button minus">
+                                                                <span class="ui-num-ud_button_label">Less</span>
+                                                                <i class="ui-num-ud_button_icon fas fa-minus"></i>
+                                                            </button>
+                                                            <div class="ui-num-ud_input">
+                                                                <input type="text" tabindex="-1" name="paxAdult" id="paxAdult" value="2">
+                                                            </div>
+                                                            <button class="ui-num-ud_button plus">
+                                                                <span class="ui-num-ud_button_label">More</span>
+                                                                <i class="ui-num-ud_button_icon fas fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="typology_item">
+                                                    <span class="pax_label">Children</span>
+                                                    <div class="pax_select">
+                                                        <div class="ui-num-ud">
+                                                            <button class="ui-num-ud_button minus">
+                                                                <span class="ui-num-ud_button_label">Less</span>
+                                                                <i class="ui-num-ud_button_icon fas fa-minus"></i>
+                                                            </button>
+                                                            <div class="ui-num-ud_input">
+                                                                <input type="text" tabindex="-1" name="paxChildren" id="paxChildren" value="2">
+                                                            </div>
+                                                            <button class="ui-num-ud_button plus">
+                                                                <span class="ui-num-ud_button_label">More</span>
+                                                                <i class="ui-num-ud_button_icon fas fa-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="searchar-bar_promocode">
+                                        <div class="promocode">
+                                            <button class="promocode_button-trigger" aria-controls="promocodeId" aria-expanded="false">
+                                                <span class="button_label">Special Codes or Rates</span>
+                                            </button>
+                                            <div class="promocode_container" id="promocodeId" aria-hidden="true" style="display: none;">
+                                                <form action="">
+                                                    <div class="ui-form_grid">
+                                                        <div class="ui-form_group">
+                                                            <div class="ui-form_group-merge">
+                                                                <div class="ui-form_group">
+                                                                    <div class="ui-input-container">
+                                                                        <label class="ui-label" for="promocode">
+                                                                            Promo code
+                                                                        </label>
+                                                                        <div class="ui-input_wrap">
+                                                                            <select class="ui-input" name="promocode" id="promocode">
+                                                                                <option selected="" value="Promotion">Promo Code</option>
+                                                                                <option value="Group">Group Code</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ui-form_group">
+                                                                    <div class="ui-input-container">
+                                                                        <label class="ui-label" for="entercode">
+                                                                            Enter code
+                                                                        </label>
+                                                                        <div class="ui-input_wrap">
+                                                                            <input class="ui-input" type="text" name="entercode" id="entercode">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ui-form_group">
+                                                            <div class="ui-input-container">
+                                                                <label class="ui-label" for="couponCode">
+                                                                    Coupon code
+                                                                </label>
+                                                                <div class="ui-input_wrap">
+                                                                    <input class="ui-input" type="text" name="couponCode" id="couponCode">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ui-form_group">
+                                                            <div class="ui-input-container">
+                                                                <label class="ui-label" for="travelindustry">
+                                                                    Travel Industry ID
+                                                                </label>
+                                                                <div class="ui-input_wrap">
+                                                                    <input class="ui-input" type="text" name="travelindustry" id="travelindustry">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="promocode_container_actions">
+                                                    <button class="button btn-inverse promocode_container_action-button">Cancel</button>
+                                                    <button class="button btn-primary promocode_container_action-button">Apply</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- booking steps -->
+                            <!--
+                                UI REVIEW: Cuando el estado del step es done el texto es previous step
+                                    Si es active el texto es current step
+                                    por defecto el texto es next step
+                            -->
+                            <div class="booking-steps_wrap">
+                                <div class="booking-steps_title">
+                                    <h2 class="title_label">SELECT A ROOM</h2>
+                                </div>
+                                <ul class="booking-steps">
+                                    <li class="done">
+                                        <span class="number"></span>
+                                        <span class="booking-steps_text">previous step:</span>
+                                        <span class="booking-steps_label">
+                                            Select Hotel
+                                        </span>
+                                    </li>
+                                    <li class="active">
+                                        <span class="number"></span>
+                                        <span class="booking-steps_text">current step:</span>
+                                        <span class="booking-steps_label">
+                                            Select Rooms & Rates
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="number"></span>
+                                        <span class="booking-steps_text">next step:</span>
+                                        <span class="booking-steps_label">
+                                            Add-Ons
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="number"></span>
+                                        <span class="booking-steps_text">next step:</span>
+                                        <span class="booking-steps_label">
+                                            Enter Guest Details
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="number"></span>
+                                        <span class="booking-steps_text">next step:</span>
+                                        <span class="booking-steps_label">
+                                            Final Review
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="number"></span>
+                                        <span class="booking-steps_text">next step:</span>
+                                        <span class="booking-steps_label">
+                                            Confirm Booking
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- filters -->
+                            <div class="filters_wrap">
+                                <div class="filters">
+                                    <div class="filters_actions">
+                                        <form action="">
+                                            <div class="ui-form_grid">
+                                                <div class="ui-form_group">
+                                                    <div class="ui-input-container">
+                                                        <label class="ui-label" for="viewResults">
+                                                            View Results By
+                                                        </label>
+                                                        <div class="ui-input_wrap">
+                                                            <select class="ui-input" name="viewResults" id="viewResults">
+                                                                <option hidden="" value="true"></option>
+                                                                <option selected="" value="room">Rooms</option>
+                                                                <option value="rate">Rates</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ui-form_group">
+                                                    <div class="ui-input-container">
+                                                        <label class="ui-label" for="sortBy">
+                                                            Sort By
+                                                        </label>
+                                                        <div class="ui-input_wrap">
+                                                            <select class="ui-input" name="sortBy" id="sortBy">
+                                                                <option hidden="" value="true"></option>
+                                                                <option selected="" value="recommended">Recommended</option>
+                                                                <option value="priceLowestToHighest">Lowest Price</option>
+                                                                <option value="priceHighestToLowest">Highest Price</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="filters_results">
+                                        <div class="filters_tags">
+                                            <div class="filters_tag">
+                                                <span class="filters_tag-label">
+                                                    Superior King
+                                                    <button class="filters_tag-action"
+                                                        aria-label="Remove Filter Superior King">
+                                                        <i class="fas fa-times"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="filters_results-action_clear">
+                                            <button class="filters_results-action_reset_button">
+                                                Clear All
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Rooms -->
+                            <div class="card-booking">
+                                <div class="card-booking_inner">
+                                    <div class="card-booking_column-left">
+                                        <div class="card-booking_image">
+                                            <div class="fotorama" data-allowfullscreen="true">
+                                                <img src="https://d321ocj5nbe62c.cloudfront.net/imageRepo/4/0/62/666/302/DSC_1611D_H.jpg" alt="room">
+                                            </div>
+                                        </div>
+                                        <ul class="card-booking_items">
+                                            <li>
+                                                <i class="fas fa-fan"></i>
+                                                <span class="label">
+                                                    Air Conditioning
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-desktop"></i>
+                                                <span class="label">
+                                                    Desk or Workplace
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-wifi"></i>
+                                                <span class="label">
+                                                    Free Wifi
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-wheelchair"></i>
+                                                <span class="label">
+                                                    Accessible Room
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-booking_column-right">
+                                        <div class="card-booking_title">
+                                            <h2 class="card-booking_title-label">SUPERIOR KING</h2>
+                                        </div>
+                                        <div class="card-booking_features">
+                                            <div class="card-booking_feature card-booking_feature--main">
+                                                <span class="card-booking_feature-label">Only 3 rooms left</span>
+                                            </div>
+                                            <div class="card-booking_feature">
+                                                <span class="card-booking_feature-label">Sleeps 2</span>
+                                            </div>
+                                            <div class="card-booking_feature">
+                                                <span class="card-booking_feature-label">1 King</span>
+                                            </div>
+                                            <div class="card-booking_feature">
+                                                <span class="card-booking_feature-label">39 m²</span>
+                                            </div>
+                                        </div>
+                                        <div class="card-booking_description">
+                                            <p>Superior King Room features sofa, central air conditioning, flat panel television, international channel, safe, work desk and arm chair.</p>
+                                        </div>
+                                        <div class="card-booking_details">
+                                            <a class="card-booking_details-button" aria-label="Room details for Superior King" href="javascript:void(0)">Room details</a>
+                                        </div>
+                                        <div class="card-booking_services">
+                                            <div class="card-booking_services-item">
+                                                <div class="card-booking_services-item_left">
+                                                    <div class="card-booking_services-title">
+                                                        <a class="card-booking_services-title_label" aria-label="Details for Superior King Honeymoon by SLH" href="javascript:void(0)">Best Available Bed and Breakfast Rate</a> 
+                                                    </div>
+                                                    <ul class="card-booking_services-list">
+                                                        <li>
+                                                            <i class="fas fa-coffee"></i>
+                                                            <span class="label">
+                                                                Breakfast Included
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-credit-card"></i>
+                                                            <span class="label">
+                                                                Guaranteed with Credit Card
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="card-booking_services-description">
+                                                        <p>Best Available Bed and Breakfast Rate Rate also includes free WiFi</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-booking_services-item_right">
+                                                    <div class="card-booking_services-price">
+                                                        <span class="card-booking_services-price_label">CN¥871</span>
+                                                    </div>
+                                                    <div class="card-booking_services-group">
+                                                        <div class="card-booking_services-group_items">
+                                                            <div class="card-booking_services-perninght">
+                                                                <span class="card-booking_services-perningh_label">Average Per Night</span>
+                                                            </div>
+                                                            <div class="card-booking_services-fees">
+                                                                <span class="card-booking_services-fees_label">Including Taxes & Fees</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-booking_services-action">
+                                                            <button class="button card-booking_services-action_button">Book now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-booking_services-item">
+                                                <div class="card-booking_services-item_left">
+                                                    <div class="card-booking_services-title">
+                                                        <a class="card-booking_services-title_label" aria-label="Details for Superior King Honeymoon by SLH" href="javascript:void(0)">Best Available Bed and Breakfast Rate</a> 
+                                                    </div>
+                                                    <ul class="card-booking_services-list">
+                                                        <li>
+                                                            <i class="fas fa-coffee"></i>
+                                                            <span class="label">
+                                                                Breakfast Included
+                                                            </span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fas fa-credit-card"></i>
+                                                            <span class="label">
+                                                                Guaranteed with Credit Card
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="card-booking_services-description">
+                                                        <p>Best Available Bed and Breakfast Rate Rate also includes free WiFi</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-booking_services-item_right">
+                                                    <div class="card-booking_services-price">
+                                                        <span class="card-booking_services-price_label">CN¥871</span>
+                                                    </div>
+                                                    <div class="card-booking_services-group">
+                                                        <div class="card-booking_services-group_items">
+                                                            <div class="card-booking_services-perninght">
+                                                                <span class="card-booking_services-perningh_label">Average Per Night</span>
+                                                            </div>
+                                                            <div class="card-booking_services-fees">
+                                                                <span class="card-booking_services-fees_label">Including Taxes & Fees</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-booking_services-action">
+                                                            <button class="button card-booking_services-action_button">Book now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-col col-12 col-lg-4">
+                            <!-- SUMMARY -->
+                            <div class="summary">
+                                <div class="summary_header">
+                                    <div class="summmary_header_inner" aria-expanded="true" aria-controls="summary_body_id">
+                                        <span class="summary_header-price_label">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span class="label">Total:</span>
+                                        </span>
+                                        <span class="summary_header-price_value">
+                                            <span class="currency">CN¥</span>
+                                            <span class="label">0</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="summary_body" aria-hidden="false" id="summary_body_id">
+                                    <div class="summary_body-title">
+                                        <h2 class="summary_body-title_label">Reservation Summary</h2>
+                                    </div>
+                                    <div class="summary_body-details">
+                                        <div class="summary_body-details_item">
+                                            <span class="summary_body-detail_label">Check-in</span>
+                                            <span class="summary_body-detail_text">After 3:00 PM</span>
+                                        </div>
+                                        <div class="summary_body-details_item">
+                                            <span class="summary_body-detail_label">Check-out</span>
+                                            <span class="summary_body-detail_text">Before 1:00 PM</span>
+                                        </div>
+                                        <div class="summary_body-details_item summary_body-details_item--full">
+                                            <span class="summary_body-detail_text">
+                                                <span class="date">Wed, Aug 26, 2020 - Thu, Aug 27, 2020</span>
+                                                <span class="pax">2 Adults</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="summary_body-price">
+                                        <span class="summary_body-price_label">Total:</span>
+                                        <span class="summary_body-price_value">
+                                            <span class="currency">CN¥</span>
+                                            <span class="label">0</span>
+                                        </span>
+                                    </div>
+                                    <div class="summary_body-list_wrap">
+                                        <div class="summary_body-list_title">
+                                            <h2 class="summary_body-list_title-label">REASONS TO BOOK DIRECT WITH SLH</h2>
+                                        </div>
+                                        <ul class="summary_body-list">
+                                            <li class="has-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                                <span class="summary_body-list_label">Pioneers of boutique luxury hotels and travel experiences for 30 years</span>
+                                            </li>
+                                            <li class="has-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                                <span class="summary_body-list_label">Best choice – over 530 hotels in 90 countries</span>
+                                            </li>
+                                            <li class="has-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                                <span class="summary_body-list_label">Best choice – over 530 hotels in 90 countries</span>
+                                            </li>
+                                            <li class="has-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                                <span class="summary_body-list_label">Best choice – over 530 hotels in 90 countries</span>
+                                            </li>
+                                            <li class="has-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                                <span class="summary_body-list_label">Best choice – over 530 hotels in 90 countries</span>
+                                            </li>
+                                            <li class="has-icon">
+                                                <i class="fas fa-money-bill-wave"></i>
+                                                <span class="summary_body-list_label">Best choice – over 530 hotels in 90 countries</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="footer_container">
+            <footer class="footer">
+                <div class="footer-top">
+                    <ul class="fotter-top_list">
+                        <li>
+                            <a href="">Reservation Terms and Conditions</a>
+                        </li>
+                        <li>
+                            <a href="">Terms of Use</a>
+                        </li>
+                        <li>
+                            <a href="">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="">Gift certificates</a>
+                        </li>
+                        <li>
+                            <a href="">Luxury Hotels</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-bottom_description">
+                        <p>
+                            © 2020 Small Luxury Hotels of the World™
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div class="ui-overlay"></div>
+</body>

@@ -1,0 +1,100 @@
+.home-page {
+    @media #{$tablet-landscape} { // >= 992px
+        .navigation-tabs_container {
+            margin-top: -112px;
+        }
+    }
+}
+.navigation-tabs_container {
+    .navigation-tabs--is-sticky & {
+        .navigation-tabs {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            left: 0;
+            z-index: $navigation-tabs-zindex;
+            border-bottom: 1px solid $c-color2;
+            transition: background-color 1000ms linear;
+            //height: 60px;
+            .navigation-tabs_inner,
+            .navigation-tabs_search {
+                @include container-wrap;
+            }
+            .navigation-tabs_inner {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .navigation-tabs_search_inner {
+                margin-bottom: calculateRem(20px);
+            }
+        }
+    }
+}
+.navigation-tabs {
+    position: relative;
+    background-color: #fff;
+}
+.navigation-tabs_inner {
+    display: flex;
+    align-items: center;
+    padding: calculateRem(20px) calculateRem(30px);
+    overflow-x: auto;
+}
+.navigation-tabs_actions {
+    display: flex;
+    margin: 0 calculateRem(-12px);
+    padding-right: calculateRem(20px);
+    box-sizing: border-box;
+}
+.navigation-tabs_button {
+    @include font-size($f-size-xs);
+    margin: 0 12px;
+    padding: calculateRem(10px) 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $c-text;
+    &.active {
+        border-bottom: 2px solid $c-primary;
+    }
+}
+.navigation-tabs_action {
+    margin-left: auto;
+}
+.navigation-tabs_search_inner {
+    left: 0;
+    width: 100%;
+    border: 1px solid $c-color2;
+    z-index: 1;
+    margin-bottom: calculateRem(50px);
+    .search {
+        padding: calculateRem(25px) calculateRem(10px);
+    }
+}
+@media #{$until-tablet-portrait} { // < 768px
+    .navigation-tabs_inner {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navigation-tabs_action {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: calculateRem(10px) calculateRem(50px);
+        background: #fff;
+        border-top: 1px solid $c-border;
+        box-sizing: border-box;
+        .button {
+            margin-left: auto;
+        }
+    }
+}
+@media #{$until-mobile} { // < 640px
+    .navigation-tabs_action {
+        padding: 0;
+        .button {
+            width: 100%;
+        }
+    }
+}

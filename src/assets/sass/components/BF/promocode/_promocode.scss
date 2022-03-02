@@ -1,0 +1,47 @@
+// promocode
+.searchar-bar_promocode {
+    border: 1px solid #000;
+    border-top: 0;
+    padding: 10px 12px;
+    box-sizing: border-box;
+}
+.promocode_button-trigger {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    padding: 0 calculateRem(25px) 0 0;
+    @include font-icon($icon-arrow-up, after, $f-size-md-xxl);
+    &::after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.18s ease;
+    }
+    &:focus {
+        border-bottom: 2px solid #000;
+    }
+    &[aria-expanded='false'] {
+        &::after {
+            transform: translateY(-50%) scaleY(-1);
+        }
+    }
+}
+.promocode_container {
+    margin-top: calculateRem(20px);
+}
+.promocode_container_actions {
+    display: flex;
+    justify-content: center;
+    margin-top: calculateRem(30px);
+    .promocode_container_action-button {
+        margin: 0 calculateRem(5px) calculateRem(5px);
+    }
+}
+
+@media #{$tablet-portrait} { // >=768px
+    .promocode_container_actions {
+        justify-content: flex-end;
+        margin-top: 0;
+    }
+}

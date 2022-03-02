@@ -1,0 +1,90 @@
+// services card
+.service-card_item {
+    margin-bottom: calculateRem(30px);
+}
+.service-card {
+    position: relative;
+}
+.services-card_image {
+    background: $c-color2;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 20%;
+        background: linear-gradient(180deg,transparent,rgba(0,0,0,.3) 50%,rgba(0,0,0,.5));
+        z-index: -1;
+    }
+    .fotorama {
+        z-index: 1;
+    }
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+.services-card_caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: calculateRem(30px) calculateRem(20px);
+    margin-top: calculateRem(20px);
+    z-index: 1;
+    background: #fff;
+    border: 1px solid $c-border;
+}
+.services-card_caption-header_title {
+    @include font-size($f-size-md);
+    padding: 0 calculateRem(15px) calculateRem(20px);
+    border-bottom: 1px solid $c-border;
+}
+.services-card_caption-body {
+    margin-bottom: calculateRem(30px);
+}
+.services-card_caption-lists li {
+    padding: calculateRem(10px) 0;
+}
+.services-card_caption-icon {
+    @include font-size(22px);
+    margin-right: calculateRem(6px);
+}
+.service-card_legend {
+    @include font-size($f-size-sm);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: calculateRem(10px);
+    color: #fff;
+    z-index: 1;
+}
+.service-card_trigger {
+    text-align: center;
+}
+.service-card_trigger_button {
+    @include font-size($f-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    .fas {
+        display: block;
+        @include font-size($f-size-md-xl);
+        margin-top: calculateRem(6px);
+        color: $c-primary;
+    }
+}
+@media #{$tablet-landscape} { // >= 992px
+    .services-card_caption {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%) translateX(50%);
+        max-height: 60%;
+        margin-top: 0;
+        padding: calculateRem(45px) calculateRem(65px);
+        border: 0;
+        overflow-y: auto;
+    }
+}
